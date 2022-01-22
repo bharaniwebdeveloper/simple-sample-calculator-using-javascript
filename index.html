@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator Task</title>
+    <link rel="stylesheet" href=style.css>
+</head>
+<body>
+
+    <hl>Simple Sample Calculator Using Javascript</hl>
+    
+    <div class="container">
+         
+       <div class="calc">
+
+        <input type="text" placeholder="0" id="text">
+        <button onclick="Clear()"class="colour">Clr</button>
+        <button onclick="del()"class="colour">Del</button>
+        <button onclick="display('%')"class="col">%</button>
+        <button onclick="display('/')"class="col">/</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display('*')"class="col">*</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="display('-')"class="col">-</button>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="display('+')"class="col">+</button>
+        <button onclick="display('.')"class="col">.</button>
+        <button onclick="display('0')">0</button>
+    
+        <button onclick="cal()" class="equalsymbol">=</button>
+
+
+        </div>
+
+    </div>
+    <script>
+
+        let text=document.getElementById("text");
+        function display(number){
+        
+            text.value +=number;
+
+          
+            
+        }      
+        
+        function cal(){
+        
+            try{
+        
+            text.value=eval(text.value);
+                }
+        
+                catch(err)
+                {
+        
+                 alert("Invalid Symbol")
+        
+                }
+        }
+        
+        function Clear()
+        {
+        
+            text.value="";
+        }
+        
+        function del()
+        {
+        
+        text.value =text.value.slice(0,-1);
+        }
+        
+                </script>
+</body>
+</html>
